@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/map.css" />
+</head>
+<body>
+    <div id="map-container">
+        <div id="map-wrapper">
+            <div id="map"></div>
+            <div id="notification"></div>
+            <div id="map-search">
+                <button id="locate-btn">Find My Location</button>
+                <button id="navigate-btn">Navigate to nearest</button>
+                <button id="find-parking-btn">Find Nearby Parking Lots</button>
+                <select id="travel-mode-select">
+                    <option value="driving-car">Driving Car</option>
+                    <option value="cycling-regular">Cycling Regular</option>
+                    <option value="cycling-road">Cycling Road</option>
+                    <option value="cycling-mountain">Cycling Mountain</option>
+                    <option value="cycling-electric">Cycling Electric</option>
+                    <option value="foot-walking">Foot Walking</option>
+                    <option value="foot-hiking">Foot Hiking</option>
+                    <option value="wheelchair">Wheelchair</option>
+                </select>
+                <input type="number" id="search-radius" placeholder="Default Radius: 3000m" min="0" style="width: 250px; margin-right: 10px;">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/notification.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/locate.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/parking.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
