@@ -2,47 +2,47 @@
   "Restaurants": [
     {
       "name": "Kamukura",
-      "menu_picture": "/PBL4_2/json/menu_image/Kamukura",
+      "menu_picture": "menu_image/kamukura",
       "price_range": "¥100–2,000"
     },
     {
       "name": "Sukiya",
-      "menu_picture": "/Users/mendoan/Downloads/PBL4_2/json/menu_image/Sukiya",
+      "menu_picture": "menu_image/sukiya",
       "price_range": "¥100-2,000"
     },
     {
       "name": "Pepper Lunch",
-      "menu_picture": "/PBL4_2/json/menu_image/PepperLunch",
+      "menu_picture": "menu_image/pepperlunch",
       "price_range": "¥100-2,000"
     },
     {
       "name": "GANGES Indian Restaurant",
-      "menu_picture": "/PBL4_2/json/menu_image/GANGES",
+      "menu_picture": "menu_image/ganges",
       "price_range": "¥100-2,000"
     },
     {
       "name" : "KFC", 
-      "menu_picture": "/PBL4_2/json/menu_image/KFC",
+      "menu_picture": "menu_image/kfc",
       "price_range": "¥100-2,000"
     },
     {
       "name": "豚屋とん一",
-      "menu_picture": "/PBL4_2/json/menu_image/豚屋とん一",
+      "menu_picture": "menu_image/豚屋とん一",
       "price_range": "¥100-2,000"
     },
     {
       "name": "McDonalds",
-      "menu_picture": "/PBL4_2/json/menu_image/MCD",
+      "menu_picture": "menu_image/mcdonalds",
       "price_range": "¥100-2,000"
     },
     {
       "name" : "Marugame",
-      "menu_picture": "/PBL4_2/json/menu_image/Marugame",
+      "menu_picture": "menu_image/Marugame",
       "price_range": "¥100-2,000"
     },
     {
       "name": "Ringer Hut",
-      "menu_picture": "/PBL4_2/json/menu_image/SushiHouse",
+      "menu_picture": "menu_image/ringerhut",
       "price_range": "¥100-2,000"
     }
   ]
