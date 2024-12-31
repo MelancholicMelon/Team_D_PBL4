@@ -1,49 +1,54 @@
 {
   "Restaurants": [
     {
-      "name": "Kamukura",
-      "menu_picture": "menu_image/kamukura",
-      "price_range": "¥100–2,000"
+      "name": "リンガーハット",
+      "menu_picture": "menu_image/リンガーハット",
+      "price_range": "¥400-2,000"
     },
     {
-      "name": "Sukiya",
-      "menu_picture": "menu_image/sukiya",
+      "name": "カプリチョーザ",
+      "menu_picture": "menu_image/カプリチョーザ",
+      "price_range": "¥1000-3,000"
+    },
+    {
+      "name": "GARDEN TERRACE LION",
+      "menu_picture": "menu_image/gardenterracelion",
+      "price_range": "¥300-4,000"
+    },
+    {
+      "name": "そば太鼓亭",
+      "menu_picture": "menu_image/そば太鼓亭",
       "price_range": "¥100-2,000"
     },
     {
-      "name": "Pepper Lunch",
-      "menu_picture": "menu_image/pepperlunch",
+      "name": "金毘羅製麺",
+      "menu_picture": "menu_image/金毘羅製麺",
+      "price_range": "¥100-1,000"
+    },
+    {
+      "name": "サイゼリヤ",
+      "menu_picture": "menu_image/サイゼリヤ",
+      "price_range": "¥100-1,000"
+    },
+    {
+      "name": "グレイスガーデン",
+      "menu_picture": "menu_image/グレイスガーデン",
       "price_range": "¥100-2,000"
     },
     {
-      "name": "GANGES Indian Restaurant",
-      "menu_picture": "menu_image/ganges",
-      "price_range": "¥100-2,000"
+      "name": "とんかつ和幸",
+      "menu_picture": "menu_image/とんかつ和幸",
+      "price_range": "¥1000-2,000"
     },
     {
-      "name" : "KFC", 
-      "menu_picture": "menu_image/kfc",
-      "price_range": "¥100-2,000"
+      "name": "一本道",
+      "menu_picture": "menu_image/一本道",
+      "price_range": "¥1000-2,000"
     },
     {
-      "name": "豚屋とん一",
-      "menu_picture": "menu_image/豚屋とん一",
-      "price_range": "¥100-2,000"
-    },
-    {
-      "name": "McDonalds",
-      "menu_picture": "menu_image/mcdonalds",
-      "price_range": "¥100-2,000"
-    },
-    {
-      "name" : "Marugame",
-      "menu_picture": "menu_image/Marugame",
-      "price_range": "¥100-2,000"
-    },
-    {
-      "name": "Ringer Hut",
-      "menu_picture": "menu_image/ringerhut",
-      "price_range": "¥100-2,000"
+      "name": "肉商店",
+      "menu_picture": "menu_image/肉商店",
+      "price_range": "¥100-1,000"
     }
   ]
 }
