@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../styles/login.css">
+  <script src="../scripts/login_page.js" defer></script>
+
+</head>
+
+<body>
+  <div id="description">
+    <div id="paragraph">
+      <h1>FoodWHomies</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac libero sit amet tellus volutpat sagittis. Vestibulum malesuada arcu sit amet dictum eleifend. Pellentesque vel massa venenatis, accumsan nunc et, fermentum eros. Aliquam elementum massa in quam feugiat, ut accumsan lorem mattis. Donec feugiat metus elit, in congue tellus dignissim quis. Nunc eget efficitur urna. Suspendisse vitae risus varius, pharetra arcu ac, tempor ex.
+      </p>
+    </div>
+  </div>
+  <main id="main_holder">
+    <h1 id="login_holder">Login</h1>
+    <div id="login_error_holder">
+      <p id="login_error_msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+    <form id="login_form" method="POST" action="/login">
+      <ul>
+        <li>
+          <label for="username-field">Username:</label>
+          <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" required>
+        </li>
+        <li>
+          <label for="password-field">Password:</label>
+          <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" required>
+        </li>
+        <li>
+          <input type="submit" value="Login" id="login-form-submit">
+        </li>
+        <li>
+          <div id="create-account-page">or <a href="./signup_page.html">Create Account!</a></div>
+        </li>
+      </ul>
+    </form>
+  </main>
+</body>
+</html>
