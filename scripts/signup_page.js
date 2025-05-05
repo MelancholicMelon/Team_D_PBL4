@@ -15,10 +15,10 @@ function sign_up() {
         else {
 
             // Step 1: Fetch the current bin data
-            fetch("https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be", {
+            fetch("Secret", {
                 method: "GET",
                 headers: {
-                    "X-Master-Key": "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS",
+                    "X-Master-Key": "Secret",
                     "Content-Type": "application/json"
                 }
             })
@@ -44,10 +44,10 @@ function sign_up() {
                 
 
                     // Step 3: Send the updated data back to the bin
-                    return fetch("https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be", {
+                    return fetch("Secret", {
                         method: "PUT",
                         headers: {
-                            "X-Master-Key": "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS",
+                            "X-Master-Key": "Secret",
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify(currentData)

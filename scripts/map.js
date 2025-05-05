@@ -84,8 +84,8 @@ async function uploadVote(restaurantName) {
         return;
     }
 
-    const binUrl = "https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be";
-    const xApiKey = "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS";
+    const binUrl = "Secret";
+    const xApiKey = "Secret";
 
     try {
         // Fetch the current data
@@ -135,8 +135,8 @@ async function uploadVote(restaurantName) {
 }
 
 async function votingTable() {
-    const binUrl = "https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be";
-    const xApiKey = "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS";
+    const binUrl = "Secret";
+    const xApiKey = "Secret";
 
     try {
         // Fetch the current preferred restaurant data
@@ -309,43 +309,6 @@ function displayRestaurantsOnMap(restaurants) {
     });
 }
 
-// Function to locate the user and fetch nearby restaurants
-// async function handleFindNearbyRestaurants() {
-//     const radiusInput = document.getElementById("search-radius").value || 1000;
-
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(async (position) => {
-//             const { latitude, longitude } = position.coords;
-
-//             // Move the map to the user's location
-//             map.setView([latitude, longitude], 13);
-
-//             // Remove all markers except the user location marker
-//             clearMarkers(false);
-
-//             if (!userMarker) {
-//                 userMarker = L.marker([latitude, longitude])
-//                     .addTo(map)
-//                     .bindPopup("You are here!")
-//                     .openPopup();
-//             } else {
-//                 userMarker.setLatLng([latitude, longitude]).openPopup();
-//             }
-
-//             // Fetch and display nearby restaurants
-//             const restaurants = await fetchNearbyRestaurants(latitude, longitude, radiusInput); // This has a list of all the restaurants near our location. Use this for processing
-//             if (restaurants) {
-//                 displayRestaurantsOnMap(restaurants);
-//                 console.log(restaurants);
-//             }
-//         }, (error) => {
-//             console.error("Geolocation error:", error);
-//             alert("Failed to retrieve location. Please allow location access.");
-//         });
-//     } else {
-//         alert("Geolocation is not supported by your browser.");
-//     }
-// }
 
 async function handleFindNearbyRestaurants() {
     const radiusInput = document.getElementById("search-radius").value || 1000;

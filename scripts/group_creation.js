@@ -1,6 +1,6 @@
 let users = [];
-const group_info_json_api = "https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be";
-const apiMasterKey = "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS";
+const group_info_json_api = "Secret";
+const apiMasterKey = "Secret";
 
 // Common headers for all requests
 const commonHeaders = {

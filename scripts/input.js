@@ -1,6 +1,6 @@
 const JSONBIN_CONFIG = {
-    URL: "https://api.jsonbin.io/v3/b/677e41bfe41b4d34e471c5be",
-    KEY: "$2a$10$eaLfBzS96u7D/mrTuyOiqOEkAFr6nLwT2OPGfu99Lj9uzvLGq0GKS",
+    URL: "Secret",
+    KEY: "Secret",
     TEST_GROUP_ID: sessionStorage.getItem("groupID"),//test_group_123 for an already tested group and how the o/p looks like
     TEST_USER_ID: sessionStorage.getItem("user")
 };
