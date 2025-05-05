@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+    INTEGRATION NOTES:
+    - This page follows start.html in the flow
+    - Loads split method decision from JSONBin
+    - Saves bill inputs back to group data
+    - Adapts UI based on chosen split method
+    
+    Required from previous page:
+    1. group_id (from JSONBin)
+    2. user_id (from session)
+    3. final_split_method (from JSONBin)
+    
+    Testing Instructions:
+    1. Check browser console for loaded split method
+    2. Try adding/removing items
+    3. Watch running total update
+    4. Check JSONBin after submission
+    -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodWHomies - Enter Bill Details</title>
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --dark-color: #2C3E50;
+            --light-color: #F7F9FC;
+            --success-color: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        .add-item-btn {
+            background-color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .total-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #ddd;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .user-status {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 8px;
+            background-color: var(--light-color);
+            border-radius: 6px;
+        }
+
+        .status-icon {
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍜 FoodWHomies</h1>
+        <p>Enter bill details <span id="currentUserBadge" class="current-user-badge"></span></p>
+    </div>
+
+    <div class="card group-info">
+        <h2>Group: <span id="groupName"></span></h2>
+        <div id="splitMethodBanner"></div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Set group name from sessionStorage
+            const groupName = sessionStorage.getItem("groupName");
+            if (groupName) {
+                document.getElementById("groupName").textContent = groupName;
+            }
+        });
+    </script>
+
+
+        <div class="card status-card">
+            <h3>Group Status</h3>
+            <div id="userStatusList"></div>
+        </div>
+
+        <div id="equalSplitForm" class="card" style="display: none;">
+            <h3>Enter Total Bill Amount</h3>
+            <div class="input-group">
+                <label>Total Amount (¥)</label>
+                <input type="number" id="totalAmount" placeholder="Enter total bill amount">
+            </div>
+            <button onclick="submitEqualSplit()">Continue</button>
+        </div>
+
+        <div id="individualSplitForm" class="card" style="display: none;">
+            <h3>Add Your Items</h3>
+            <div class="input-row">
+                <div class="input-group" style="flex: 2;">
+                    <label>Item Name</label>
+                    <input type="text" id="itemName" placeholder="e.g., Tonkotsu Ramen">
+                </div>
+                <div class="input-group" style="flex: 1;">
+                    <label>Price (¥)</label>
+                    <input type="number" id="itemPrice" placeholder="980">
+                </div>
+            </div>
+            <button class="add-item-btn" onclick="addItem()">+ Add Item</button>
+            <div id="itemList" class="item-list"></div>
+            <div class="total-section">Total: ¥<span id="runningTotal">0</span></div>
+        </div>
+
+        <div id="paymentCard" class="card">
+            <h3>Have you already paid?</h3>
+            <div class="input-group">
+                <label>Amount Paid (if any)</label>
+                <input type="number" id="amountPaid" placeholder="0">
+            </div>
+            <button onclick="saveDetails()">Save Details</button>
+        </div>
+        <button id="continueToResults" onclick="window.location.href='results.html'" disabled>
+            Continue to Results
+        </button>
+    </div>
+
+    <script
+        src="../scripts/input.js"></script>
+
+
+
+    </script>
+</body>
+</html>

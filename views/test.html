@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSONBin Test</title>
+</head>
+<body>
+    <h2>JSONBin Access Test</h2>
+    <button onclick="testBinAccess()">Test Access</button>
+    <div id="result" style="margin-top: 20px; padding: 10px; background-color: #f5f5f5;"></div>
+
+    <script>
+        const JSONBIN_CONFIG = {
+            URL: "https://api.jsonbin.io/v3/b/677e99edad19ca34f8e7b623",
+            KEY: "$2a$10$H4UvF6Kk8OxQP76yvdhUtO5p8VfeiSZ6AdGkqAtixy2czOVelKj7m", // Using your access key instead
+            TEST_GROUP_ID: "test_group_123"
+        };
+
+        async function testBinAccess() {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = 'Testing...';
+
+            try {
+                const response = await fetch(JSONBIN_CONFIG.URL, {
+                    method: "GET",
+                    headers: {
+                        "X-Access-Key": JSONBIN_CONFIG.KEY, // Changed from X-Master-Key to X-Access-Key
+                        "X-Bin-Meta": "false"
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                resultDiv.innerHTML = `Success! Got data: <pre>${JSON.stringify(data, null, 2)}</pre>`;
+                console.log('Full response:', data);
+
+            } catch (error) {
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                console.error('Error details:', error);
+            }
+        }
+    </script>
+</body>
+</html>
